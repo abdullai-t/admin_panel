@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>www.QuestionBelly.com/admin</title>
+	<!-- css files used-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/personal.css">	
+
+
+</head>
+<body>
+	<!-- nav section-->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target ="#navBar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a  class ="navbar-brand"href="#">Admin Panel</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navBar">
+					<ul class="nav navbar-nav navbar-center" id="first">
+							<li class="active"><a href="#">Dashboard</a></li>
+							<li><a href="#">PDfs</a></li>
+							<li><a href="#">Posts</a></li>
+							<li><a href="#">Users</a></li>
+
+					</ul>
+								<!--align it to the right-->
+						<ul class="nav navbar-nav navbar-right" id="other">
+								<li><a href="#">Welcom, Admin</a></li>
+								<li><a href="#">logout</a></li>
+
+						</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!--header-->
+<header id="header">
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-11">
+
+				<h1><span class="glyphicon glyphicon-cog"></span>Dashboard</h1>
+			</div>
+			<div class="col-md-1">
+
+ <!-- Button trigger modal -->
+ <div id="Anoun_modall">
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Anoun_modal"> 
+		<span class="glyphicon glyphicon-info-sign"></span> Announcement   
+	</button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="Anoun_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					<div class="modal-body">
+							<div class="form-group">
+									<label for="comment">Announcement:</label>
+									<textarea class="form-control" rows="5" id="comment"></textarea>
+								  </div>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary">Send</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+
+			</div>
+
+
+
+		</div>
+	</div>
+</header>	
+
+<section id="breadcrumb">
+	<div class="container">
+		<ol class="breadcrumb">
+			<li class="active"><span class="glyphicon glyphicon-cog"></span> Dashboard</li>
+		</ol>
+	</div>
+
+</section>
+
+<!--left side list group-->
+<section id="main">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-3">
+					<div class="list-group">
+							<a href="#" class="list-group-item list-group-item-action active main-color-bg"><span class="glyphicon glyphicon-cog"></span>
+							   Dashboard 
+							</a>
+							<a href="#" class="list-group-item list-group-item-action"><span class="glyphicon glyphicon-book"></span> PDFs<span class="badge">123</span></a>
+							<a href="#" class="list-group-item list-group-item-action"><span class="glyphicon glyphicon-pencil"></span> Posts<span class="badge">123</span></a>
+							<a href="#" class="list-group-item list-group-item-action"><span class="glyphicon glyphicon-user"></span> Users<span class="badge">123</span></a>
+						  </div>
+ <!-- progress bars-->
+						  <div class="well">
+							  <h4>Database</h4>
+							  <div class="progress">
+									<div class="progress-bar " role="progressbar" aria-valuenow="0.1" aria-valuemin="0" aria-valuemax="100" style="width: 0.1%">0.1%</div>
+								  </div>
+
+						  </div>
+
+			</div>
+
+			<div class="col-md-9">
+				<!-- website overview-->
+				<div class="panel panel-default">
+						<div class="panel-heading main-color-bg">
+								<h3 class="panel-title">website overiew</h3>
+						</div>
+						
+						<div class="panel-body">
+							<div class="col-md-3">
+								<div class="well">
+									<h2><span class="glyphicon glyphicon-user"></span> 230</h2>
+									<h4>Users</h4>
+								</div>
+							</div>
+
+
+							<div class="col-md-3">
+								<div class="well dash-box">
+									<h2><span class="glyphicon glyphicon-book"></span> 30</h2>
+									<h4>PDFs</h4>
+								</div>
+							</div>
+
+
+							<div class="col-md-3">
+								<div class="well dash-box">
+									<h2><span class="glyphicon glyphicon-pencil"></span> 20</h2>
+									<h4>Posts</h4>
+								</div>
+							</div>
+
+
+							<div class="col-md-3">
+								<div class="well dash-box">
+									<h2><span class="glyphicon glyphicon-stats"></span> 23,330</h2>
+									<h4>Visits</h4>
+								</div>
+							</div>
+						</div>
+						</div>
+
+						<!--latest updattes-->
+								  <!--pannel--> 
+							<div class="panel panel-default">
+								<div class="panel-heading">Daily Updates</div>
+								<div class="panel-body">
+
+									<!--table of daily updates-->	
+									
+									<table class="table table-striped">
+										<thead>
+										  <tr>
+											
+											<th scope="col">Section</th>
+											<th scope="col"> <span class="glyphicon glyphicon-stats"></span> Stats</th>
+											
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr>
+										
+											<td><span class="glyphicon glyphicon-pencil"></span> Total Daily posts</td>
+											<td>500</td>
+											
+										  </tr>
+										  <tr>
+											
+											<td><span class="glyphicon glyphicon-log-in"></span> Daily Signups</td>
+											<td>30</td>
+											
+										  </tr>
+										  <tr>
+											
+											<td> <span class="glyphicon glyphicon-download-alt"></span> Total Daily Downloads </td>
+											<td>59</td>
+											
+										  </tr>
+										  <tr>
+											
+											<td> <span class="glyphicon glyphicon-flag"></span> Flaged posts </td>
+											<td>5</td>
+											
+										  </tr>
+										</tbody>
+									  </table>
+
+				    </div>
+				 </div>
+
+						
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer id="footer">
+	<p>Copyright QuestionBelly, &copy;2019</p>
+</footer>
+ 
+</body>
+                                  <!--the End-->
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</html>
