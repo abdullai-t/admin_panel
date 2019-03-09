@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QuestionBelly/admin</title>
+	<!-- css files used-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/Chart.js"></script>
+  <script type="text/javascript" src="js/utils.js"></script>	
+
+	
+
+
+</head>
+<body>
+	<!-- nav section-->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target ="#navBar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a  class ="navbar-brand"href="#">Admin Panel</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navBar">
+								<!--align it to the right-->
+						<ul class="nav navbar-nav navbar-right" id="other">
+								<li><a href="#">Welcom, Admin</a></li>
+								<li><a href="#">logout</a></li>
+
+						</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!--header-->
+<header id="header">
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-11">
+
+				<h1><span class="glyphicon glyphicon-cog"></span>Dashboard</h1>
+			</div>
+			<div class="col-md-1">
+
+ <!-- Button trigger modal -->
+ <div id="Anoun_modall">
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Anoun_modal"> 
+		<span class="glyphicon glyphicon-info-sign"></span> Announcement   
+	</button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="Anoun_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					<div class="modal-body">
+							<div class="form-group">
+									<label for="comment">Announcement:</label>
+									<textarea class="form-control" rows="5" id="comment"></textarea>
+							 </div>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary">Send</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+
+
+		</div>
+	</div>
+</header>	
+
+<section id="breadcrumb">
+	<div class="container">
+		<ol class="breadcrumb">
+			<li class="active"><span class="glyphicon glyphicon-cog"></span> Dashboard</li>
+		</ol>
+	</div>
+
+</section>
+
+<!--left side list group-->
+<section id="main">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-3">
+					<div class="list-group">
+							<a href="#" class="list-group-item list-group-item-action active main-color-bg"><span class="glyphicon glyphicon-cog"></span>
+							   Dashboard 
+							</a>
+							<!-- pdf modal-->
+							<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#pdf_modal"><span class="glyphicon glyphicon-book"></span> PDFs<span class="badge">123</span></a>
+							<div id="pdf_modal" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+										<div class="modal-content">
+												<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+														<h4 class="modal-title" style="text-align-last: center">Recent pdf uploads</h4>
+												</div>
+												<div class="modal-body">
+						
+												</div>
+												<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+										</div>
+								</div>
+						</div>
+							<!--end of pdf modal-->
+
+							<!--text modal-->
+							<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#text_modal"><span class="glyphicon glyphicon-pencil"></span> Texts<span class="badge">123</span></a>
+							<div id="text_modal" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+										<div class="modal-content">
+												<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+														<h4 class="modal-title" style="text-align-last: center">Recent text uploads</h4>
+												</div>
+												<div class="modal-body">
+						
+												</div>
+												<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+										</div>
+								</div>
+						</div>
+							<!--end of text modal-->
+
+							<!--pctures modal-->
+							<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#pictures_modal"><span class="glyphicon glyphicon-picture"></span> Picture Shots<span class="badge">123</span></a>
+							<div id="pictures_modal" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+										<div class="modal-content">
+												<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+														<h4 class="modal-title" style="text-align-last: center">Recent picture uploads</h4>
+												</div>
+												<div class="modal-body">
+						
+												</div>
+												<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+										</div>
+								</div>
+						</div>
+							<!--end of pictures modal-->
+
+							<!-- flags modal-->
+							<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#flags_modal"><span class="glyphicon glyphicon-flag"></span> Flagged posts<span class="badge">123</span></a>
+							<div id="flags_modal" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+										<div class="modal-content">
+												<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+														<h4 class="modal-title" style="text-align-last: center"> Flaged posts</h4>
+												</div>
+												<div class="modal-body">
+						
+												</div>
+												<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+										</div>
+								</div>
+						</div>
+							<!--end of pictures modal-->
+
+
+							<!--Users modal-->
+							<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#users_modal"><span class="glyphicon glyphicon-user"></span> Users<span class="badge">123</span></a>
+							<div id="users_modal" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+										<div class="modal-content">
+												<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+														<h4 class="modal-title" style="text-align-last: center">Recent signups</h4>
+												</div>
+												<div class="modal-body">
+						
+												</div>
+												<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+										</div>
+								</div>
+						</div>
+							<!--end of user modal-->
+						  </div>
+ <!-- progress bars-->
+						  <div class="well">
+							  <h4>Database</h4>
+							  <div class="progress">
+									<div class="progress-bar " role="progressbar" aria-valuenow="0.1" aria-valuemin="0" aria-valuemax="100" style="width: 0.1%">0.1%</div>
+								  </div>
+
+						  </div>
+
+			</div>
+
+			<!-- website overview-->
+			<div class="col-md-9">
+				<div class="panel panel-default">
+						<div class="panel-heading main-color-bg">
+								<h3 class="panel-title">website overiew</h3>
+						</div>
+						
+						<div class="panel-body">
+                                  <!--overview_users-->							
+							<div class="col-md-4">
+								<div class="well">
+									<h2><span class="glyphicon glyphicon-user"></span> 230</h2>
+									<h4>Users</h4>
+								</div>
+							</div>
+
+                                  <!--overview_pdfs-->
+							<div class="col-md-4">
+								<div class="well dash-box">
+									<h2><span class="glyphicon glyphicon-book"></span> 30</h2>
+									<h4>PDFs</h4>
+								</div>
+							</div>
+
+                                  <!--overview_texts-->
+							<div class="col-md-4">
+								<div class="well dash-box">
+									<h2><span class="glyphicon glyphicon-pencil"></span> 20</h2>
+									<h4>Texts</h4>
+								</div>
+							</div>
+
+
+                                  <!--overview_pictures-->
+						
+								<div class="col-lg-4">
+										<div class="well dash-box">
+												<h2><span class="glyphicon glyphicon-picture"></span> 230</h2>
+												<h4>picture shots</h4>
+											</div>
+
+								</div>
+
+                                  <!--overview_flagged posts-->
+								<div class="col-lg-4">
+										<div class="well dash-box">
+												<h2><span class="glyphicon glyphicon-flag"></span> 1 </h2>
+												<h4>Flagged posts</h4>
+											</div>
+
+								</div>
+                                  <!--overview_visits-->
+								<div class="col-lg-4">
+										<div class="well dash-box">
+												<h2><span class="glyphicon glyphicon-stats"></span> 1,000 </h2>
+												<h4>Visits</h4>
+											</div>
+
+								</div>
+							
+						</div>
+						</div>
+						<!--charts-->
+						<div class="panel panel-default">
+							<div class="panel-heading">Charts</div>
+							<div class="panel-body">
+										<!-- pie chart-->
+										<div class="col-md-4">
+												<div class="well">
+														<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#pie_modal"> Male to Female stats</a>
+														<div id="pie_modal" class="modal fade" role="dialog">
+															<div class="modal-dialog">
+																	<div class="modal-content">
+																			<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																					<h4 class="modal-title" style="text-align-last: center">Male to Female stats</h4>
+																			</div>
+																			<div class="modal-body">
+																					<canvas id="pie-chart"  style="width:500px; height:400px;"></canvas>
+																			</div>
+																			<div class="modal-footer">
+																					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																			</div>
+																	</div>
+															</div>
+													</div>
+												</div>
+											</div>
+									
+
+										<!-- bar chart for upload-->
+										<div class="col-md-4">
+												<div class="well">
+														<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#barUP_modal">Univerties upload stats</a>
+														<div id="barUP_modal" class="modal fade" role="dialog">
+															<div class="modal-dialog">
+																	<div class="modal-content">
+																			<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																					<h4 class="modal-title" style="text-align-last: center">Univerties upload stats</h4>
+																			</div>
+																			<div class="modal-body">
+																					<canvas id="bar-chart1"  style="width:500px; height:400px;"></canvas>
+																			</div>
+																			<div class="modal-footer">
+																					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																			</div>
+																	</div>
+															</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- bar charts for downloads-->
+
+										<div class="col-md-4">
+												<div class="well">
+														<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#barDL_modal">Univerties Download stats</a>
+														<div id="barDL_modal" class="modal fade" role="dialog">
+															<div class="modal-dialog">
+																	<div class="modal-content">
+																			<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																					<h4 class="modal-title" style="text-align-last: center">Univerties Download stats</h4>
+																			</div>
+																			<div class="modal-body">
+																					<canvas id="bar-chart2"  style="width:500px; height:400px;"></canvas>
+																			</div>
+																			<div class="modal-footer">
+																					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																			</div>
+																	</div>
+															</div>
+													</div>
+												</div>
+											</div>
+
+									
+								
+
+
+
+                    <!-- bar end-->
+							</div>
+						</div>
+  
+
+
+						<!-- charts end-->
+
+						<!--latest updattes-->
+								  <!--pannel--> 
+							<div class="panel panel-default">
+								<div class="panel-heading" >Daily Updates</div>
+								<div class="panel-body">
+
+									<!--table of daily updates-->	
+									
+									<table class="table table-striped">
+										<thead>
+										  <tr>
+											<th scope="col">Section</th>
+											<th scope="col"> <span class="glyphicon glyphicon-stats"></span> Stats</th>
+											</tr>
+										</thead>
+
+										<tbody>
+										  <tr>
+											<td><span class="glyphicon glyphicon-pencil"></span> Today's posts</td>
+											<td>500</td>
+											</tr>
+											
+										  <tr>
+											<td><span class="glyphicon glyphicon-log-in"></span> Today's Signups</td>
+											<td>30</td>	
+											</tr>
+											
+										  <tr>
+											<td> <span class="glyphicon glyphicon-download-alt"></span> Today's Downloads </td>
+											<td>59</td>
+										  </tr>
+
+										  <tr>
+											<td> <span class="glyphicon glyphicon-flag"></span> Flaged posts </td>
+											<td>5</td>
+											
+										  </tr>
+										</tbody>
+									  </table>
+
+				    </div>
+				 </div>
+							<div class="panel panel-default">
+								<div class="panel-heading" > <span class="glyphicon glyphicon-arrow-up"></span> LEADDERBOARD</div>
+								<div class="panel-body">
+
+									<!--leaderboard table-->
+									<table class="table">
+										<thead class="thead-dark">
+										  <tr>
+											<th scope="col"> position</th>
+											<th scope="col"> Name</th>
+											<th scope="col"> progress</th>
+											<th scope="col"> Medal</th>
+											<th scope="col"> points</th>
+											
+										  </tr>
+										</thead>
+										
+										<tbody>
+										  <tr>
+											<th>1</th>
+											<td>Opoku Agyman F.</td>
+											<td>
+												<div class="progress">
+													<div class="progress-bar " role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 80%">80%</div>
+												  </div>
+											</td>
+											<td>Platinum</td>
+											<td>1M</td>
+										  </tr>
+
+										  <tr>
+												<th>2</th>										
+											<td>Faddal Ibrahim</td>
+											<td>
+												<div class="progress">
+													<div class="progress-bar " role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 40%">40%</div>
+												  </div>
+											</td>
+											<td>Gold</td>
+											<td>10k</td>
+										  </tr>
+
+										  <tr>
+												<th>3</th>
+											<td>Assan Nathaniel</td>
+											<td>
+												<div class="progress">
+													<div class="progress-bar " role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 90%">90%</div>
+												  </div>
+											</td>
+											<td>silver</td>
+											<td>2,400</td>
+										  </tr>
+
+										  <tr>
+												<th>4</th>
+											<td>Abdullai Tahiru</td>
+											<td>
+												<div class="progress">
+													<div class="progress-bar " role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 76%">76%</div>
+												  </div>
+											</td>
+											<td>Bronze</td>
+											<td>200</td>
+										  </tr>
+										</tbody>
+									  </table>
+									  
+									 
+
+				    </div>
+				 </div>
+
+						
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer id="footer">
+	<p>Copyright QuestionBelly, &copy;2019</p>
+</footer>
+
+ 
+</body>
+                                  <!--the End-->
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/personal.js"></script>
+</html>
